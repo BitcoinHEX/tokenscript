@@ -1,0 +1,17 @@
+<script type="text/javascript"><![CDATA[
+  class Token {
+      constructor(tokenInstance) {
+          this.props = tokenInstance
+      }
+      render() {
+          return `<div><p>Hello World</p></div>`;
+      }
+  }
+  
+  web3.tokens.dataChanged = (oldTokens, updatedTokens) => {
+      const currentTokenInstance = web3.tokens.data.currentInstance
+      const domHtml = new Token(currentTokenInstance).render()
+      document.getElementById('root').innerHTML = domHtml
+  }
+  
+  ]]></script>
